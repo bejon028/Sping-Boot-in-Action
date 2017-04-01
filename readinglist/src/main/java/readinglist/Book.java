@@ -1,9 +1,6 @@
 package readinglist;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Bijon on 3/30/2017.
@@ -14,10 +11,22 @@ public class Book {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private String reader;
-    private String isbn;
+
+
+    @Column(name = "TITLE", length = 512)
     private String title;
     private String author;
     private String description;
+
+    private Double creator;
+
+    public Double getCreator() {
+        return creator;
+    }
+
+    public void setCreator(Double creator) {
+        this.creator = creator;
+    }
 
     public Long getId() {
         return id;
@@ -33,14 +42,6 @@ public class Book {
 
     public void setReader(String reader) {
         this.reader = reader;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
     }
 
     public String getTitle() {
