@@ -9,3 +9,8 @@ logging:
   file: BookWork.log
   level:
     root: info
+
+
+security:
+  basic:
+    enabled: true
